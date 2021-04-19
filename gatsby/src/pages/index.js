@@ -1,29 +1,49 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
+import { graphql } from "gatsby";
+import {GatsbyImage as Img} from 'gatsby-plugin-image'
+import Footer from '../components/Footer'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+const IndexPage = ({data}) => {
+  console.log(data)
+  const recipes = data.recipes.nodes
+  return (
+    <>
+      <h1>EATLIKESLATER</h1>
+      {recipes.map(recipe => (
+        <div>
+          <h2>{recipe.name}</h2>
+          <Img image={recipe.image.asset.gatsbyImageData}/>
+          <ul>
+            {recipe.ingredients.map(ingredient => (
+              <li>{ingredient.name}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <Footer />
+    </>
+  )
+}
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+export const query = graphql`
+  query {
+  recipes: allSanityRecipe {
+    nodes {
+      id
+      name
+      ingredients {
+        id
+        name
+        vegetarian
+      }
+      image {
+        asset {
+          gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+}
+`;
 
 export default IndexPage
