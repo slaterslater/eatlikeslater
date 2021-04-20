@@ -1,14 +1,14 @@
 import { CgMenuBoxed as icon } from 'react-icons/cg';
 
 export default {
-  name: 'ingredient',
-  title: 'Ingredients',
+  name: 'tag',
+  title: 'Tags',
   type: 'document',
   icon,
   fields: [
     {
       name: 'name',
-      title: 'Ingredient Name',
+      title: 'Tag Name',
       type: 'string',
     },
   ],

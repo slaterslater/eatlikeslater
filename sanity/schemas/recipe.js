@@ -15,20 +15,15 @@ export default {
       },
     },
     {
-      title: 'Eaten',
-      name: 'eaten',
-      type: 'date',
+      title: 'About',
+      type: 'markdown',
+      name: 'about'
     },
     {
-      title: 'Description',
-      name: 'description',
-      type: 'text'
-    },
-    {
-      title: 'Ingredients',
-      name: 'ingredients',
+      title: 'Tags',
+      name: 'tags',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'ingredient' }] }],
+      of: [{ type: 'reference', to: [{ type: 'tag' }] }],
     },
     {
       title: 'Recipe Name',
@@ -64,7 +59,7 @@ export default {
       title: 'Eaten',
       name: 'eatenDesc',
       by: [
-        {field: 'eaten', direction: 'desc'}
+        {field: 'image.asset.originalFilename', direction: 'desc'}
       ]
     },
   ], // orderings
@@ -72,18 +67,18 @@ export default {
     select: {
       title: 'name',
       media: 'image',
-      ingredient0: 'ingredients.0.name',
-      ingredient1: 'ingredients.1.name',
-      ingredient2: 'ingredients.2.name',
-      ingredient3: 'ingredients.3.name',
-      ingredient4: 'ingredients.4.name',
+      tag0: 'tags.0.name',
+      tag1: 'tags.1.name',
+      tag2: 'tags.2.name',
+      tag3: 'tags.3.name',
+      tag4: 'tags.4.name',
     },
     prepare: ({ title, media, ...others }) => {
-      const toppings = Object.values(others).filter(Boolean);
+      const tags = Object.values(others).filter(Boolean);
       return {
         title,
         media,
-        subtitle: toppings.join(', '),
+        subtitle: tags.join(', '),
       };
     },
   },

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { graphql } from "gatsby";
 import {GatsbyImage as Img} from 'gatsby-plugin-image'
 import Footer from '../components/Footer'
@@ -6,25 +6,36 @@ import styled from "styled-components";
 
 const RecipeGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(280px, 350px)); */
+  grid-template-columns: repeat(3, 280px);
   gap: 1rem;
   grid-auto-rows: auto auto;
 `;
 
 const IndexPage = ({data}) => {
-  const recipes = data.recipes.nodes
+  
+  const [recipes, setRecipes] = useState(data.recipes.nodes)
+  
+  const handleChange = e => {
+    const findMatches = ({name, tags, about}) => {
+      const categories = tags.map(tag => tag.name)
+      return [name, ...categories, about].find(text => (
+        text?.toUpperCase().includes(e.target.value.toUpperCase())
+      ))
+    }
+    const found = data.recipes.nodes.filter(findMatches)  
+    setRecipes(found)
+  }
+
   return (
     <>
       {/* <h1>EATLIKESLATER</h1> */}
+      <input type="text" onChange={handleChange} />
       <RecipeGrid>
       {recipes.map(recipe => (
         <div key={recipe.id}>
-          {/* <h2>{recipe.name}</h2> */}
           <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name}/>
-          <p>
-            {recipe.ingredients.map(ingredient => ingredient?.name).join(', ') }
-          </p>
-        </div>
+        </div>  
       ))}
       </RecipeGrid>
       <Footer />
@@ -34,14 +45,14 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   query {
-  recipes: allSanityRecipe(sort: {fields: eaten, order: DESC})  {
+  recipes: allSanityRecipe(sort: {fields: image___asset___originalFilename, order: DESC})  {
     nodes {
       id
       name
-      ingredients {
+      about
+      tags {
         id
         name
-        vegetarian
       }
       image {
         asset {
