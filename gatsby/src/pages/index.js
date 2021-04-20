@@ -10,12 +10,12 @@ const IndexPage = ({data}) => {
     <>
       <h1>EATLIKESLATER</h1>
       {recipes.map(recipe => (
-        <div>
+        <div key={recipe.id}>
           <h2>{recipe.name}</h2>
-          <Img image={recipe.image.asset.gatsbyImageData}/>
+          <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name}/>
           <ul>
             {recipe.ingredients.map(ingredient => (
-              <li>{ingredient.name}</li>
+              <li key={ingredient.id}>{ingredient.name}</li>
             ))}
           </ul>
         </div>

@@ -1,4 +1,4 @@
-import { MdLocalPizza as icon } from 'react-icons/md';
+import { GiMeal as icon } from 'react-icons/gi';
 
 export default {
   name: 'recipe',

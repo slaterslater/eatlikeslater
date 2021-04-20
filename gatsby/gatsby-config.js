@@ -5,6 +5,7 @@ export default {
     description: `Slater's Food Blog`,
   },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {

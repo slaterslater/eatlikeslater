@@ -1,4 +1,4 @@
-import { FaPepperHot as icon } from 'react-icons/fa';
+import { CgMenuBoxed as icon } from 'react-icons/cg';
 
 export default {
   name: 'ingredient',
