@@ -11,24 +11,7 @@ export default {
       title: 'Ingredient Name',
       type: 'string',
     },
-    {
-      name: 'vegetarian',
-      title: 'Vegetarian',
-      type: 'boolean',
-      options: {
-        layout: 'checkbox',
-      },
-    },
   ],
-  preview: {
-    select: {
-      name: 'name',
-      vegetarian: 'vegetarian',
-    },
-    prepare: ({ name, vegetarian }) => ({
-      title: `${name} ${vegetarian ? '🌱' : ''}`,
-    }),
-  },
 };
 
 // https://www.sanity.io/docs/schema-types
