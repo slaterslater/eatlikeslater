@@ -35,6 +35,7 @@ const IndexPage = ({data}) => {
       {recipes.map(recipe => (
         <div key={recipe.id}>
           <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name}/>
+          <p>{recipe.slug.current}</p>
         </div>  
       ))}
       </RecipeGrid>
@@ -45,11 +46,12 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   query {
-  recipes: allSanityRecipe(sort: {fields: image___asset___originalFilename, order: DESC})  {
+  recipes: allSanityRecipe(sort: {order: DESC, fields: date})  {
     nodes {
       id
       name
       about
+      inspiration
       tags {
         id
         name
@@ -58,6 +60,9 @@ export const query = graphql`
         asset {
           gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
         }
+      }
+      slug {
+        current
       }
     }
   }

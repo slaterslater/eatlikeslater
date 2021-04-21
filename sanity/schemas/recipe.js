@@ -7,12 +7,20 @@ export default {
   icon,
   fields: [
     {
+      title: 'Date',
+      name: 'date',
+      type: 'date',
+      validation: Rule => Rule.required()
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'image',
       options: {
         hotspot: true,
+        storeOriginalFilename: false,
       },
+      validation: Rule => Rule.required()
     },
     {
       title: 'About',
@@ -26,21 +34,34 @@ export default {
       of: [{ type: 'reference', to: [{ type: 'tag' }] }],
     },
     {
+      title: 'Inspriration',
+      name: 'inspiration',
+      type: 'url'
+    },
+    {
       title: 'Recipe Name',
       name: 'name',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'name',
-        maxLength: 100,
+        source: (doc) => `${doc.date}/${doc.name}`
       },
-    },
+      validation: Rule => Rule.required()
+    } 
   ], // fields
   orderings: [
+    {
+      title: 'Date',
+      name: 'eatenDesc',
+      by: [
+        {field: 'date', direction: 'desc'}
+      ]
+    },
     {
       title: 'A-Z',
       name: 'nameAsc',
@@ -53,13 +74,6 @@ export default {
       name: 'nameDesc',
       by: [
         {field: 'name', direction: 'desc'}
-      ]
-    },
-    {
-      title: 'Eaten',
-      name: 'eatenDesc',
-      by: [
-        {field: 'image.asset.originalFilename', direction: 'desc'}
       ]
     },
   ], // orderings
