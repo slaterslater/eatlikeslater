@@ -1,5 +1,12 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+`
 
 const PageStyles = styled.div`
   display: grid;
@@ -7,7 +14,12 @@ const PageStyles = styled.div`
 `
 
 const Layout = ({ children }) => {
-  return <PageStyles>{children}</PageStyles>
+  return (
+    <>
+      <GlobalStyle />
+      <PageStyles>{children}</PageStyles>
+    </>
+  )
 }
 
 export default Layout
