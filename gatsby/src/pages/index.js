@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
 import RecipeGrid from "../components/RecipeGrid"
-import Footer from "../components/Footer"
 
 const IndexPage = ({ data }) => {
   const [recipes, setRecipes] = useState(data.recipes.nodes)
@@ -23,7 +22,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Header handleChange={handleChange} />
       <RecipeGrid recipes={recipes} />
-      <Footer />
     </Layout>
   )
 }

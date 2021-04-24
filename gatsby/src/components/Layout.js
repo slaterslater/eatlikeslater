@@ -1,10 +1,11 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
   }
 `
 
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <PageStyles>{children}</PageStyles>
+      <Footer/>
     </>
   )
 }

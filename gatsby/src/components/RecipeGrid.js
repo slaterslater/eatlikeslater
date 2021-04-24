@@ -5,9 +5,11 @@ import styled from "styled-components"
 
 const RecipeGridStyles = styled.div`
   display: grid;
+  min-width: 350px;
+  max-width: 1000px;
   /* grid-template-columns: repeat(auto-fill, minmax(280px, 350px)); */
-  grid-template-columns: repeat(3, 280px);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
   grid-auto-rows: auto auto;
 `
 
