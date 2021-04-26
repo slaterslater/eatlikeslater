@@ -3,6 +3,9 @@ import styled, { createGlobalStyle } from "styled-components"
 import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
+    :root {
+    --grey: #dadada;
+  }
   body {
     margin: 0;
     background-color: #f5f5f5;
