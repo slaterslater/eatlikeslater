@@ -14,7 +14,6 @@ const RecipeGridStyles = styled.div`
 `
 
 const RecipeGrid = ({ recipes }) => {
-  console.log(recipes)
   return (
     <RecipeGridStyles>
       {recipes.map(recipe => (

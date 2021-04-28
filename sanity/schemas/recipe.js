@@ -96,6 +96,6 @@ export default {
       };
     },
   },
-};
+}
 
 // https://www.sanity.io/docs/schema-types
