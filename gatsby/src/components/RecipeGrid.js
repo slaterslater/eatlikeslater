@@ -16,7 +16,7 @@ const RecipeGrid = ({ recipes }) => {
   return (
     <RecipeGridStyles>
       {recipes.map(recipe => (
-        <Link to={`/${recipe.slug.current}`} key={recipe.id}>
+        <Link to={`/${recipe.slug.current}`} key={recipe.id} id={'recipe' + recipe.id}>
           <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name} />
         </Link>
       ))}

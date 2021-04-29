@@ -2,7 +2,7 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
 import { IoReaderOutline as Reader } from "react-icons/io5"
-import { RiArrowGoBackFill as ArrowBack } from "react-icons/ri"
+import { RiArrowGoBackFill as BackArrow } from "react-icons/ri"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage as Img } from "gatsby-plugin-image"
 import styled from "styled-components"
@@ -56,17 +56,21 @@ const SingleRecipe = ({ data: { recipe } }) => {
           <h2>{recipe.name}</h2>
           <ReactMarkdown children={recipe.about} />
           <nav>
-            <Link to="/" title="back to all recipes">
-              <ArrowBack />
+            <Link 
+              to={'/#recipe'+recipe.id} 
+              title="back to all recipes"
+            >
+              <BackArrow />
             </Link>
             {recipe.inspiration && (
-              <Link
-                to={recipe.inspiration}
+              <a
+                href={recipe.inspiration}
                 target="_blank"
+                rel="noreferrer"
                 title="see inspiration for this recipe"
               >
                 <Reader />
-              </Link>
+              </a>
             )}
           </nav>
         </AboutBox>
@@ -78,6 +82,7 @@ const SingleRecipe = ({ data: { recipe } }) => {
 export const query = graphql`
   query($id: String) {
     recipe: sanityRecipe(id: { eq: $id }) {
+      id
       name
       about
       inspiration

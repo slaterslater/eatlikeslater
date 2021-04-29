@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
@@ -18,8 +18,15 @@ const IndexPage = ({ data }) => {
     setRecipes(found)
   }
 
+  useEffect(()=>{
+    if (window.location.hash){
+      window.scrollTo(0, window.scrollY -5)
+      window.history.pushState("", "eatlikeslater", window.location.pathname);
+    }  
+  },[])
+
   return (
-    <Layout>
+    <Layout>  
       <Header handleChange={handleChange} />
       <RecipeGrid recipes={recipes} />
     </Layout>
