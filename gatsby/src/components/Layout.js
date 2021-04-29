@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import "@fontsource/new-tegomin"
 import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
@@ -9,6 +10,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background-color: #f5f5f5;
+  }
+  html {
+    font-family: 'New Tegomin', serif;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
   }
 `
 
@@ -22,7 +29,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <PageStyles>{children}</PageStyles>
-      <Footer/>
+      <Footer />
     </>
   )
 }

@@ -12,7 +12,7 @@
 //   margin-top:15px;
 //   border: 1px solid var(--grey);
 //   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-//   grid-auto-rows: auto auto;  
+//   grid-auto-rows: auto auto;
 // `
 
 // const AboutBox = styled.div`

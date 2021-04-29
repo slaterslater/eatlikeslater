@@ -4,12 +4,12 @@ import styled from "styled-components"
 const HeaderStyles = styled.header`
   margin-top: 8px;
   text-align: right;
+  margin-bottom: 5px;
   input {
     width: 265px;
     font-size: 1.2rem;
     padding: 5px;
   }
-  margin-bottom: 5px;
 `
 
 const Header = ({ handleChange }) => {
