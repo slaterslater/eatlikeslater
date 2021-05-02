@@ -10,9 +10,16 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background-color: #f5f5f5;
+    display:flex;
+    /* flex-direction:column;   */
+    justify-content: center;
+    align-items: center;
+    /* align-content:center; */
+    min-height:100%;
   }
   html {
     font-family: 'New Tegomin', serif;
+    height:100%;
   }
   h2 {
     font-family: 'Montserrat', sans-serif;
@@ -20,8 +27,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const PageStyles = styled.div`
-  display: grid;
-  justify-content: center;
+  /* display: grid;
+  justify-content: center; */
+  
 `
 
 const Layout = ({ children }) => {

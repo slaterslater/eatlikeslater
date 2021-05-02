@@ -9,16 +9,22 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 
 const RecipeStyles = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   min-width: 350px;
   max-width: 1000px;
-  margin-top: 2rem;
   border: 1px solid var(--grey);
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-auto-rows: auto auto;
 `
 
+const ImgBox = styled.div`
+  min-width: 350px;
+  flex: 1;
+`;
+
 const AboutBox = styled.div`
+  min-width: 350px;
+  flex: 1;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
@@ -51,7 +57,12 @@ const SingleRecipe = ({ data: { recipe } }) => {
   return (
     <Layout>
       <RecipeStyles>
-        <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name} />
+        <ImgBox>
+          <Img 
+            image={recipe.image.asset.gatsbyImageData} 
+            alt={recipe.name} 
+          />
+        </ImgBox>  
         <AboutBox>
           <h2>{recipe.name}</h2>
           <ReactMarkdown children={recipe.about} />
@@ -88,7 +99,7 @@ export const query = graphql`
       inspiration
       image {
         asset {
-          gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+          gatsbyImageData(placeholder: BLURRED width: 700 fit: FILLMAX layout: FULL_WIDTH)
         }
       }
     }
