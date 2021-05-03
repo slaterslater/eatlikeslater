@@ -19,6 +19,7 @@ const RecipeStyles = styled.div`
 const ImgBox = styled.div`
   min-width: 350px;
   flex: 1;
+  line-height: 0px;
 `;
 
 const AboutBox = styled.div`
@@ -60,7 +61,7 @@ const SingleRecipe = ({ data: { recipe } }) => {
         <ImgBox>
           <Img 
             image={recipe.image.asset.gatsbyImageData} 
-            alt={recipe.name} 
+            alt={recipe.name}
           />
         </ImgBox>  
         <AboutBox>
@@ -99,7 +100,7 @@ export const query = graphql`
       inspiration
       image {
         asset {
-          gatsbyImageData(placeholder: BLURRED width: 700 fit: FILLMAX layout: FULL_WIDTH)
+          gatsbyImageData(placeholder: BLURRED width: 700 fit: FILLMAX)
         }
       }
     }
