@@ -4,6 +4,8 @@ import { GatsbyImage as Img } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const RecipeGridStyles = styled.div`
+  margin-top: 45px;
+  margin-bottom:auto;
   display: grid;
   min-width: 350px;
   max-width: 1000px;
@@ -12,7 +14,12 @@ const RecipeGridStyles = styled.div`
   grid-auto-rows: auto auto;
 `
 
+const Whoops = styled.p`
+  margin: auto;
+`;
+
 const RecipeGrid = ({ recipes }) => {
+  if (recipes.length === 0) return <Whoops>That doesn't match anything...</Whoops>
   return (
     <RecipeGridStyles>
       {recipes.map(recipe => (

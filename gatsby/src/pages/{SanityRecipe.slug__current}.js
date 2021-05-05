@@ -10,6 +10,7 @@ import Layout from "../components/Layout"
 
 const RecipeStyles = styled.div`
   display: flex;
+  margin:auto;
   flex-wrap: wrap;
   min-width: 350px;
   max-width: 1000px;
@@ -32,6 +33,7 @@ const AboutBox = styled.div`
   background-color: white;
   padding: 5px;
   h2 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     border-bottom: 1px solid var(--grey);
     padding-bottom: 25px;

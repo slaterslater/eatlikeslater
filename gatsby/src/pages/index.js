@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
 
   useEffect(()=>{
     if (window.location.hash){
-      window.scrollTo(0, window.scrollY -5)
+      window.scrollTo(0, window.scrollY -42)
       window.history.pushState("", "eatlikeslater", window.location.pathname);
     }  
   },[])
