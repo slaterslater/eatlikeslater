@@ -10,7 +10,7 @@ import Layout from "../components/Layout"
 
 const RecipeStyles = styled.div`
   display: flex;
-  margin:auto;
+  margin: auto;
   flex-wrap: wrap;
   min-width: 350px;
   max-width: 1000px;
@@ -21,7 +21,7 @@ const ImgBox = styled.div`
   min-width: 350px;
   flex: 1;
   line-height: 0px;
-`;
+`
 
 const AboutBox = styled.div`
   min-width: 350px;
@@ -33,7 +33,7 @@ const AboutBox = styled.div`
   background-color: white;
   padding: 5px;
   h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     border-bottom: 1px solid var(--grey);
     padding-bottom: 25px;
@@ -61,19 +61,13 @@ const SingleRecipe = ({ data: { recipe } }) => {
     <Layout>
       <RecipeStyles>
         <ImgBox>
-          <Img 
-            image={recipe.image.asset.gatsbyImageData} 
-            alt={recipe.name}
-          />
-        </ImgBox>  
+          <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name} />
+        </ImgBox>
         <AboutBox>
           <h2>{recipe.name}</h2>
           <ReactMarkdown children={recipe.about} />
           <nav>
-            <Link 
-              to={'/#recipe'+recipe.id} 
-              title="back to all recipes"
-            >
+            <Link to={"/#recipe" + recipe.id} title="back to all recipes">
               <BackArrow />
             </Link>
             {recipe.inspiration && (
@@ -102,7 +96,7 @@ export const query = graphql`
       inspiration
       image {
         asset {
-          gatsbyImageData(placeholder: BLURRED width: 700 fit: FILLMAX)
+          gatsbyImageData(placeholder: BLURRED, width: 700, fit: FILLMAX)
         }
       }
     }

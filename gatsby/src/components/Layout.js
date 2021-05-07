@@ -6,10 +6,13 @@ import Footer from "./Footer"
 const GlobalStyle = createGlobalStyle`
     :root {
     --grey: #dadada;
+    --bg: #f5f5f5;
+    --white: #ffffff;
+    --black: #000000;
   }
   html, body, #___gatsby, #gatsby-focus-wrapper {
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: var(--bg);
     font-family: 'New Tegomin', serif;
     /* display:flex;
     flex-direction: column;
@@ -18,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     align-content: center; */
     min-height:100%;
     height:100%;
+    /* scroll-behavior: smooth; */
   }
   h2 {
     /* font-family: 'Montserrat', sans-serif; */
@@ -66,7 +70,7 @@ const PageStyles = styled.div`
   /* align-content: center; */
   /* justify-content:space-between; */
   min-height: 100%;
-  height:100%;
+  height: 100%;
   /* flex-wrap: wrap; */
   align-items: center;
   align-content: center;
@@ -80,10 +84,10 @@ const Layout = ({ children }) => {
       <PageStyles>
         {/* <Header /> */}
         {children}
-      {/* <div id="top">Top</div>
+        {/* <div id="top">Top</div>
       <div id="mid">Mid</div>
       <div id="bot">Bottom</div> */}
-      <Footer />
+        <Footer />
       </PageStyles>
       {/* <PageStyles>{children}</PageStyles> */}
     </>

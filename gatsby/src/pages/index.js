@@ -18,15 +18,17 @@ const IndexPage = ({ data }) => {
     setRecipes(found)
   }
 
-  useEffect(()=>{
-    if (window.location.hash){
-      window.scrollTo(0, window.scrollY -42)
-      window.history.pushState("", "eatlikeslater", window.location.pathname);
-    }  
-  },[])
+  // when returning from a single recipe page
+  // goto previous location and remove hash from url
+  useEffect(() => {
+    if (window.location.hash) {
+      window.scrollTo(0, window.scrollY - 42)
+      window.history.pushState("", "eatlikeslater", window.location.pathname)
+    }
+  }, [])
 
   return (
-    <Layout>  
+    <Layout>
       <Header handleChange={handleChange} />
       <RecipeGrid recipes={recipes} />
     </Layout>
