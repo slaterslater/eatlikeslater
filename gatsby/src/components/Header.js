@@ -1,10 +1,19 @@
 import React, { useState } from "react"
 import { BsSearch } from "react-icons/bs"
 import { AiOutlineStop as Stop } from "react-icons/ai"
-import { HeaderStyles } from "../styles/HeaderStyles"
 import styled from "styled-components"
 import { useInView } from "react-intersection-observer"
 import { BiUpArrowCircle } from "react-icons/bi"
+import { HeaderStyles } from "../styles/HeaderStyles"
+
+// 2DO
+/*
+add search input
+add sliding functionality
+focus on input when sliding in
+remove from dom when sliding out
+refactor all styles
+*/
 
 const TopScroller = styled.nav`
   position: fixed;
