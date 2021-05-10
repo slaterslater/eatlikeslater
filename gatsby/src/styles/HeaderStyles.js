@@ -14,27 +14,24 @@ export const HeaderStyles = styled.header`
     justify-content: flex-end;
   }
   h1 {
-    margin: 0;
-    margin-right: auto;
-    margin-left: 5px;
+    margin: -5px auto 0 5px;
   }
   input {
     width: 175px;
     font-size: 1.2rem;
     transition: 1s;
+    padding: 5px;
+    margin-left: 50px;
+    /* position: absolute;
+    z-index:5;
+    right:40px;s
+    top:15px; */
   }
   .slide {
-    /* width: 265px; */
-    /* width: 0;  */
-    /* padding:0; */
-    /* display:none; */
-    /* border:none; */
-    /* transform: scaleX(0); */
-    /* transform: translateX(-1000%); */
-    /* transform-origin: right; */
-    /* display:block; */
-    /* transition: 1s; */
-    /* transform: translateX(-1000%) */
+    width: 0;
+    padding: 0;
+    border: 1px solid white;
+    transition: 1s;
   }
   .hidden {
     transform: translateY(500%);
@@ -43,13 +40,14 @@ export const HeaderStyles = styled.header`
   .pressed {
     background-color: var(--black);
   }
-  /* svg {
+  span svg {
     height: 25px;
     width: 25px;
     color: black;
-    margin-left:10px;
-    margin-right:5px;
-  } */
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 10px;
+  }
   .circle {
     position: fixed;
     top: 0;
@@ -59,5 +57,22 @@ export const HeaderStyles = styled.header`
     border-radius: 50%;
     border: 2px solid black;
     display: inline-block;
+  }
+`
+
+export const UpButtonStyles = styled.nav`
+  position: fixed;
+  z-index: 1;
+  margin-right: 10px;
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: 1s;
+  svg {
+    height: 40px;
+    width: 40px;
+    color: black;
   }
 `

@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
   // goto previous location and remove hash from url
   useEffect(() => {
     if (window.location.hash) {
-      window.scrollTo(0, window.scrollY - 42)
+      window.scrollTo(0, window.scrollY - 8)
       window.history.pushState("", "eatlikeslater", window.location.pathname)
     }
   }, [])
