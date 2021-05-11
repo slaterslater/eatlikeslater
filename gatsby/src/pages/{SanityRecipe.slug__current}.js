@@ -7,6 +7,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage as Img } from "gatsby-plugin-image"
 import styled from "styled-components"
 import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 const RecipeStyles = styled.div`
   display: flex;
@@ -58,6 +59,8 @@ const AboutBox = styled.div`
 
 const SingleRecipe = ({ data: { recipe } }) => {
   return (
+    <>
+    <SEO title={recipe.name} />
     <Layout>
       <RecipeStyles>
         <ImgBox>
@@ -84,6 +87,7 @@ const SingleRecipe = ({ data: { recipe } }) => {
         </AboutBox>
       </RecipeStyles>
     </Layout>
+    </>
   )
 }
 

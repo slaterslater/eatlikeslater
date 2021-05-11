@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
 import RecipeGrid from "../components/RecipeGrid"
+import SEO from "../components/SEO"
 
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const [recipes, setRecipes] = useState(data.recipes.nodes)
 
   const handleChange = e => {
@@ -28,10 +29,13 @@ const IndexPage = ({ data }) => {
   }, [])
 
   return (
+    <>
+    <SEO title="Homepage" />
     <Layout>
       <Header handleChange={handleChange} />
       <RecipeGrid recipes={recipes} />
     </Layout>
+    </>
   )
 }
 
@@ -60,4 +64,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default HomePage

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Eat Like Slater`,
-    siteUrl: `https://slaterslater.github.io/`,
+    siteUrl: `https://eatlikeslater.netlify.app`,
     description: `Slater's Food Blog`,
   },
   plugins: [
