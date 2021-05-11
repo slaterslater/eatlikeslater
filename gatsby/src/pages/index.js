@@ -30,7 +30,7 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-    <SEO title="Homepage" />
+    <SEO />
     <Layout>
       <Header handleChange={handleChange} />
       <RecipeGrid recipes={recipes} />
