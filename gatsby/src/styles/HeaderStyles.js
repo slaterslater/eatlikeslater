@@ -22,10 +22,9 @@ export const HeaderStyles = styled.header`
     transition: 1s;
     padding: 5px;
     margin-left: 50px;
-    /* position: absolute;
-    z-index:5;
-    right:40px;s
-    top:15px; */
+    &:focus {
+      outline: none;
+    }
   }
   .slide {
     width: 0;
