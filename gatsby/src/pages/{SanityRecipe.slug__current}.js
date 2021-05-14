@@ -60,33 +60,33 @@ const AboutBox = styled.div`
 const SingleRecipe = ({ data: { recipe } }) => {
   return (
     <>
-    <SEO title={recipe.name} />
-    <Layout>
-      <RecipeStyles>
-        <ImgBox>
-          <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name} />
-        </ImgBox>
-        <AboutBox>
-          <h2>{recipe.name}</h2>
-          <ReactMarkdown children={recipe.about} />
-          <nav>
-            <Link to={"/#recipe" + recipe.id} title="back to all recipes">
-              <BackArrow />
-            </Link>
-            {recipe.inspiration && (
-              <a
-                href={recipe.inspiration}
-                target="_blank"
-                rel="noreferrer"
-                title="see inspiration for this recipe"
-              >
-                <Reader />
-              </a>
-            )}
-          </nav>
-        </AboutBox>
-      </RecipeStyles>
-    </Layout>
+      <SEO title={recipe.name} />
+      <Layout>
+        <RecipeStyles>
+          <ImgBox>
+            <Img image={recipe.image.asset.gatsbyImageData} alt={recipe.name} />
+          </ImgBox>
+          <AboutBox>
+            <h2>{recipe.name}</h2>
+            <ReactMarkdown children={recipe.about} />
+            <nav>
+              <Link to={"/#recipe" + recipe.id} title="back to all recipes">
+                <BackArrow />
+              </Link>
+              {recipe.inspiration && (
+                <a
+                  href={recipe.inspiration}
+                  target="_blank"
+                  rel="noreferrer"
+                  title="see inspiration for this recipe"
+                >
+                  <Reader />
+                </a>
+              )}
+            </nav>
+          </AboutBox>
+        </RecipeStyles>
+      </Layout>
     </>
   )
 }

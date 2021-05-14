@@ -30,11 +30,11 @@ const HomePage = ({ data }) => {
 
   return (
     <>
-    <SEO />
-    <Layout>
-      <Header handleChange={handleChange} />
-      <RecipeGrid recipes={recipes} />
-    </Layout>
+      <SEO />
+      <Layout>
+        <Header handleChange={handleChange} />
+        <RecipeGrid recipes={recipes} />
+      </Layout>
     </>
   )
 }
