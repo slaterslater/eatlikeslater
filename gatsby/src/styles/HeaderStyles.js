@@ -68,10 +68,15 @@ export const UpButtonStyles = styled.nav`
   width: 40px;
   border-radius: 50%;
   background-color: var(--white);
+  opacity: 50%;
   transition: 1s;
   svg {
     height: 40px;
     width: 40px;
     color: black;
+  }
+  &:hover{
+    opacity: 100%;
+    transform: scale(1.1);
   }
 `

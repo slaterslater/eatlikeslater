@@ -6,7 +6,7 @@ import Footer from "./Footer"
 const GlobalStyle = createGlobalStyle`
     :root {
     --grey: #dadada;
-    --bg: #f1f1f1;
+    --bg: #f8f8f8;
     --white: #ffffff;
     --black: #000000;
   }

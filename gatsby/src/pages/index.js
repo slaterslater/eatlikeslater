@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Header from "../components/Header"
 import RecipeGrid from "../components/RecipeGrid"
-import SEO from "../components/SEO"
+import SEO from "../components/Seo"
 
 const HomePage = ({ data }) => {
   const [recipes, setRecipes] = useState(data.recipes.nodes)
