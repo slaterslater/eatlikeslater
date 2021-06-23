@@ -21,6 +21,8 @@ const RecipeGridStyles = styled.div`
     top: -9999em;
     z-index: 2;
     text-align: center;
+    pointer-events:none;
+    /* need above to have clicks pass through span to underlying anchor */
   }
   span.active {
     top: 15px; 
