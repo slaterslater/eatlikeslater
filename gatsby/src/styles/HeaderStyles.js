@@ -4,7 +4,7 @@ export const HeaderStyles = styled.header`
   background-color: white;
   border-bottom: 1px solid var(--grey);
   width: 100%;
-  padding: 8px;
+  padding: 8px 0;
   div {
     min-width: 350px;
     max-width: 1000px;
