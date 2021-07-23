@@ -47,6 +47,9 @@ const AboutBox = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+  }
+  .hr {
     border-top: 1px solid var(--grey);
   }
   svg {
@@ -69,7 +72,7 @@ const SingleRecipe = ({ data: { recipe } }) => {
           <AboutBox>
             <h2>{recipe.name}</h2>
             <ReactMarkdown children={recipe.about} />
-            <nav>
+            <nav className={recipe.about ? 'hr' : ''}>
               <Link to={"/#recipe" + recipe.id} title="back to all recipes">
                 <BackArrow />
               </Link>
