@@ -19,5 +19,17 @@ module.exports = {
         token: process.env.GATSBY_SANITY_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `eatlikeslater`,
+        short_name: `eatlikeslater`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `static/favicon.ico`, // This path is relative to the root of the site.
+      },
+    },
   ],
 }
