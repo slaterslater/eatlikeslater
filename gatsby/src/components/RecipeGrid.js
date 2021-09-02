@@ -11,21 +11,21 @@ const RecipeGridStyles = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   grid-auto-rows: auto auto;
-  a{
-    position:relative;
+  a {
+    position: relative;
   }
-  span{
+  span {
     position: absolute;
-    width:100%;
+    width: 100%;
     color: white;
     top: -9999em;
     z-index: 2;
     text-align: center;
-    pointer-events:none;
+    pointer-events: none;
     /* need above to have clicks pass through span to underlying anchor */
   }
   span.active {
-    top: 15px; 
+    top: 15px;
   }
 `
 
@@ -35,16 +35,16 @@ const Whoops = styled.p`
 
 const handleClick = e => {
   const chosen = e.target.parentElement.previousElementSibling
-  if (chosen.classList.contains('active')) return
+  if (chosen.classList.contains("active")) return
   e.preventDefault()
-  const stale = document.querySelector('.active')
+  const stale = document.querySelector(".active")
   if (stale) {
-    stale.classList.remove('active')
-    stale.nextElementSibling.children[2].style.opacity = '1'
+    stale.classList.remove("active")
+    stale.nextElementSibling.children[2].style.opacity = "1"
   }
-  chosen.classList.add('active')
-  chosen.nextElementSibling.firstChild.style.backgroundColor = 'black'
-  chosen.nextElementSibling.children[2].style.opacity = '0.5'
+  chosen.classList.add("active")
+  chosen.nextElementSibling.firstChild.style.backgroundColor = "black"
+  chosen.nextElementSibling.children[2].style.opacity = "0.5"
   // console.log(chosen.nextElementSibling.firstChild)
 }
 

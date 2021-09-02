@@ -29,13 +29,11 @@ const HomePage = ({ data }) => {
   }, [])
 
   return (
-    <>
+    <Layout>
       <SEO />
-      <Layout>
-        <Header handleChange={handleChange} />
-        <RecipeGrid recipes={recipes} />
-      </Layout>
-    </>
+      <Header handleChange={handleChange} />
+      <RecipeGrid recipes={recipes} />
+    </Layout>
   )
 }
 

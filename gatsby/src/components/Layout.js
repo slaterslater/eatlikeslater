@@ -17,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
     min-height:100%;
     height:100%;
   }
+  h2 {
+    font-family: "Montserrat", sans-serif;
+  }
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+  }
 `
 
 const PageStyles = styled.div`

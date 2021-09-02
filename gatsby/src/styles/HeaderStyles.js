@@ -75,7 +75,7 @@ export const UpButtonStyles = styled.nav`
     width: 40px;
     color: black;
   }
-  &:hover{
+  &:hover {
     opacity: 100%;
     transform: scale(1.1);
   }
